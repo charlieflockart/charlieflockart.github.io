@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.game-container {
+    width: 800px;
+    max-width: 95vw;
+    text-align: center;
+}
+
+.score-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    font-size: 1.2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+#game {
+    height: 400px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+#dino {
+    width: 60px;
+    height: 100px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%234CAF50" d="M50 0c-27.6 0-50 22.4-50 50s22.4 50 50 50 50-22.4 50-50-22.4-50-50-50zm0 90c-22.1 0-40-17.9-40-40s17.9-40 40-40 40 17.9 40 40-17.9 40-40 40z"/></svg>') center/contain no-repeat;
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+    transition: transform 0.1s;
+}
+
+.obstacle {
+    position: absolute;
+    border-radius: 5px;
+}
+
+.cactus {
+    bottom: 0;
+}
+
+.cactus.small {
+    width: 20px;
+    height: 40px;
+    background: #ff5252;
+}
+
+.cactus.medium {
+    width: 30px;
+    height: 60px;
+    background: #ff9800;
+}
+
+.cactus.large {
+    width: 40px;
+    height: 80px;
+    background: #f44336;
+}
+
+.cactus.group {
+    width: 80px;
+    height: 50px;
+    background: linear-gradient(to right, #ff5252 33%, #ff9800 33% 66%, #f44336 66%);
+}
+
+.bird {
+    width: 40px;
+    height: 30px;
+}
+
+.bird.low {
+    bottom: 120px;
+    background: #2196F3;
+}
+
+.bird.medium {
+    bottom: 180px;
+    background: #03A9F4;
+}
+
+.bird.high {
+    bottom: 240px;
+    background: #00BCD4;
+}
+
+.controls {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 10px;
+    line-height: 1.5;
+}
+
+button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background: #45a049;
+}
+
+#gameOver {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.jumping {
+    animation: jump 0.8s ease-out;
+}
+
+.ducking {
+    transform: scale(0.5, 0.5);
+}
+
+@keyframes jump {
+    0%, 100% {
+        bottom: 0;
+    }
+    50% {
+        bottom: 200px;
+    }
+} 

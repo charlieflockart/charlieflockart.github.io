@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Todo App</title>
+    <link rel="stylesheet" href="todo-styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>My Todo List</h1>
+        
+        <div class="todo-input">
+            <input type="text" id="taskInput" placeholder="Enter a new task...">
+            <input type="date" id="dateInput">
+            <button onclick="addTask()">Add Task</button>
+        </div>
+
+        <ul id="taskList" class="todo-list">
+            <!-- Tasks will be added here dynamically -->
+        </ul>
+    </div>
+
+    <script src="todo-script.js"></script>
+</body>
+</html> 
